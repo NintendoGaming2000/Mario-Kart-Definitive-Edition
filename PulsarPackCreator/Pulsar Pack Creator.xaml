@@ -245,6 +245,77 @@
                     </Grid>
                 </DockPanel>
             </TabItem>
+            <TabItem Name="Battle Cups" Header="Battle Cups">
+                <DockPanel>
+                    <Button x:Name="LeftArrow" DockPanel.Dock="Left" Content="&lt;" FontWeight="Bold" FontSize="18" Click="OnLeftArrowClick" />
+                    <Button x:Name="RightArrow"  DockPanel.Dock="Right" Content="&gt;" FontWeight="Bold" FontSize="18" Click="OnRightArrowClick" />
+                    <Grid x:Name="CupsGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.7*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Name="FileLabel"    Grid.Row="0" Grid.Column="1" Text="File Names"          Grid.RowSpan="2"  Style="{StaticResource TopLabels}"/>
+                        <TextBlock x:Name="NameLabel"    Grid.Row="0" Grid.Column="2" Text="Track Names"         Grid.RowSpan="2"  Style="{StaticResource TopLabels}"/>
+                        <TextBlock x:Name="AuthorLabel"  Grid.Row="0" Grid.Column="3" Text="Author Names"        Grid.RowSpan="2"  Style="{StaticResource TopLabels}"/>
+                        <TextBlock x:Name="VersionLabel" Grid.Row="0" Grid.Column="4" Text="Versions (optional)" Grid.RowSpan="2"  Style="{StaticResource TopLabels}"/>
+
+                        <TextBlock x:Name="CupsLabel1" Grid.Row="1" Grid.Column="0" Text="Battle1" Style="{StaticResource BattleLabels}"/>
+                        <TextBlock x:Name="CupsLabel2" Grid.Row="2" Grid.Column="0" Text="Battle2" Style="{StaticResource BattleLabels}"/>
+                        <TextBlock x:Name="CupsLabel3" Grid.Row="3" Grid.Column="0" Text="Battle3" Style="{StaticResource BattleLabels}"/>
+                        <TextBlock x:Name="CupsLabel4" Grid.Row="4" Grid.Column="0" Text="Battle4" Style="{StaticResource BattleLabels}"/>
+                        <TextBlock x:Name="CupsLabel5" Grid.Row="5" Grid.Column="0" Text="Battle5" Style="{StaticResource BattleLabels}"/>
+
+                        <TextBox x:Name="File1" Grid.Row="1" Grid.Column="1" TextChanged="OnFilenameChange" PreviewDragOver="OnDrag" PreviewDrop="OnSZSDrop"  Style="{StaticResource FileBoxes}"/>
+                        <TextBox x:Name="File2" Grid.Row="2" Grid.Column="1" TextChanged="OnFilenameChange" PreviewDragOver="OnDrag" PreviewDrop="OnSZSDrop"  Style="{StaticResource FileBoxes}"/>
+                        <TextBox x:Name="File3" Grid.Row="3" Grid.Column="1" TextChanged="OnFilenameChange" PreviewDragOver="OnDrag" PreviewDrop="OnSZSDrop"  Style="{StaticResource FileBoxes}"/>
+                        <TextBox x:Name="File4" Grid.Row="4" Grid.Column="1" TextChanged="OnFilenameChange" PreviewDragOver="OnDrag" PreviewDrop="OnSZSDrop"  Style="{StaticResource FileBoxes}"/>
+                        <TextBox x:Name="File5" Grid.Row="5" Grid.Column="1" TextChanged="OnFilenameChange" PreviewDragOver="OnDrag" PreviewDrop="OnSZSDrop"  Style="{StaticResource FileBoxes}"/>
+
+                        <TextBox x:Name="Name1" Grid.Row="1" Grid.Column="2" DataObject.Pasting="OnBattleNamePasting" PreviewTextInput="OnBattleNameInput" TextChanged="OnBattleNameChange" Style="{StaticResource NameBoxes}"/>
+                        <TextBox x:Name="Name2" Grid.Row="2" Grid.Column="2" DataObject.Pasting="OnBattleNamePasting" PreviewTextInput="OnBattleNameInput" TextChanged="OnBattleNameChange" Style="{StaticResource NameBoxes}"/>
+                        <TextBox x:Name="Name3" Grid.Row="3" Grid.Column="2" DataObject.Pasting="OnBattleNamePasting" PreviewTextInput="OnBattleNameInput" TextChanged="OnBattleNameChange" Style="{StaticResource NameBoxes}"/>
+                        <TextBox x:Name="Name4" Grid.Row="4" Grid.Column="2" DataObject.Pasting="OnBattleNamePasting" PreviewTextInput="OnBattleNameInput" TextChanged="OnBattleNameChange" Style="{StaticResource NameBoxes}"/>
+                        <TextBox x:Name="Name5" Grid.Row="5" Grid.Column="2" DataObject.Pasting="OnBattleNamePasting" PreviewTextInput="OnBattleNameInput" TextChanged="OnBattleNameChange" Style="{StaticResource NameBoxes}"/>
+
+                        <TextBox x:Name="Author1" Grid.Row="1" Grid.Column="3" TextChanged="OnAuthorChange" Style="{StaticResource AuthorBoxes}"/>
+                        <TextBox x:Name="Author2" Grid.Row="2" Grid.Column="3" TextChanged="OnAuthorChange" Style="{StaticResource AuthorBoxes}"/>
+                        <TextBox x:Name="Author3" Grid.Row="3" Grid.Column="3" TextChanged="OnAuthorChange" Style="{StaticResource AuthorBoxes}"/>
+                        <TextBox x:Name="Author4" Grid.Row="4" Grid.Column="3" TextChanged="OnAuthorChange" Style="{StaticResource AuthorBoxes}"/>
+                        <TextBox x:Name="Author5" Grid.Row="5" Grid.Column="3" TextChanged="OnAuthorChange" Style="{StaticResource AuthorBoxes}"/>
+
+                        <TextBox x:Name="Version1" Grid.Row="1" Grid.Column="4" TextChanged="OnVersionChange" Style="{StaticResource VersionBoxes}"/>
+                        <TextBox x:Name="Version2" Grid.Row="2" Grid.Column="4" TextChanged="OnVersionChange" Style="{StaticResource VersionBoxes}"/>
+                        <TextBox x:Name="Version3" Grid.Row="3" Grid.Column="4" TextChanged="OnVersionChange" Style="{StaticResource VersionBoxes}"/>
+                        <TextBox x:Name="Version4" Grid.Row="4" Grid.Column="4" TextChanged="OnVersionChange" Style="{StaticResource VersionBoxes}"/>
+                        <TextBox x:Name="Version5" Grid.Row="5" Grid.Column="4" TextChanged="OnVersionChange" Style="{StaticResource VersionBoxes}"/>
+
+                        <ComboBox x:Name="Slot1" Grid.Row="1" Grid.Column="5" SelectionChanged="OnSlotChange" Style="{StaticResource ComboBoxes}"/>
+                        <ComboBox x:Name="Slot2" Grid.Row="2" Grid.Column="5" SelectionChanged="OnSlotChange" Style="{StaticResource ComboBoxes}"/>
+                        <ComboBox x:Name="Slot3" Grid.Row="3" Grid.Column="5" SelectionChanged="OnSlotChange" Style="{StaticResource ComboBoxes}"/>
+                        <ComboBox x:Name="Slot4" Grid.Row="4" Grid.Column="5" SelectionChanged="OnSlotChange" Style="{StaticResource ComboBoxes}"/>
+                        <ComboBox x:Name="Slot5" Grid.Row="5" Grid.Column="5" SelectionChanged="OnSlotChange" Style="{StaticResource ComboBoxes}"/>
+
+                        <ComboBox x:Name="Music1" Grid.Row="1" Grid.Column="6" SelectionChanged="OnMusicChange" Style="{StaticResource ComboBoxes}"/>
+                        <ComboBox x:Name="Music2" Grid.Row="2" Grid.Column="6" SelectionChanged="OnMusicChange" Style="{StaticResource ComboBoxes}"/>
+                        <ComboBox x:Name="Music3" Grid.Row="3" Grid.Column="6" SelectionChanged="OnMusicChange" Style="{StaticResource ComboBoxes}"/>
+                        <ComboBox x:Name="Music4" Grid.Row="4" Grid.Column="6" SelectionChanged="OnMusicChange" Style="{StaticResource ComboBoxes}"/>
+                        <ComboBox x:Name="Music5" Grid.Row="5" Grid.Column="6" SelectionChanged="OnMusicChange" Style="{StaticResource ComboBoxes}"/>
+                    </Grid>
+                </DockPanel>
+            </TabItem>
             <TabItem Name="Options" Header="Options">
                 <Grid>
                     <Grid.RowDefinitions>
